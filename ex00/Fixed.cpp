@@ -6,12 +6,11 @@
 /*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:27:37 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/10 13:04:20 by aperez-b         ###   ########.fr       */
+/*   Updated: 2022/09/12 10:14:30 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iterator>
 
 const int	Fixed::_frac = 8;
 
