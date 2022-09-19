@@ -6,7 +6,7 @@
 /*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:27:05 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/19 12:53:30 by aperez-b         ###   ########.fr       */
+/*   Updated: 2022/09/19 16:05:43 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class	Fixed
 		Fixed(const float value);
 		~Fixed(void);
 		Fixed(Fixed const &copy);
-		Fixed&	operator=(Fixed const &copy);
+		Fixed	&operator=(Fixed const &copy);
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		float	toFloat(void) const;

@@ -6,7 +6,7 @@
 /*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:27:37 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/19 16:06:00 by aperez-b         ###   ########.fr       */
+/*   Updated: 2022/09/19 16:16:14 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,22 @@ const int	Fixed::_frac = 8;
 
 Fixed::Fixed(void): _value(0)
 {
-	std::cout << "Fixed object created with default constructor" << std::endl; 
 }
 
 Fixed::Fixed(const int value): _value(value * ft_pow(2, this->_frac))
 {  
-	std::cout << "Fixed object created with int constructor" << std::endl; 
 } 
 
 Fixed::Fixed(const float value): _value(value * ft_pow(2, this->_frac))
 {  
-	std::cout << "Fixed object created with float constructor" << std::endl; 
 } 
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Fixed object destroyed" << std::endl;
 }
 
-Fixed::Fixed(Fixed const & copy)
+Fixed::Fixed(Fixed const &copy)
 {
-	std::cout << "Fixed object copied" << std::endl;
 	*this = copy;
 }
 
@@ -69,9 +64,57 @@ int	Fixed::toInt(void) const
 
 Fixed	&Fixed::operator=(Fixed const &copy)
 {
-	std::cout << "Assignation operator called" << std::endl;
 	this->_value = copy.getRawBits();
 	return (*this);
+}
+
+Fixed	Fixed::operator+(Fixed const &copy) const
+{
+	Fixed	result(this->toFloat() + copy.toFloat());
+	return (result);
+}
+
+Fixed	Fixed::operator-(Fixed const &copy) const
+{
+	Fixed	result(this->toFloat() - copy.toFloat());
+	return (result);
+}
+
+Fixed	Fixed::operator*(Fixed const &copy) const
+{
+	Fixed	result(this->toFloat() * copy.toFloat());
+	return (result);
+}
+
+Fixed	Fixed::operator/(Fixed const &copy) const
+{
+	Fixed	result(this->toFloat() / copy.toFloat());
+	return (result);
+}
+
+bool	Fixed::operator==(const Fixed &copy) const
+{
+	return (this->toFloat() == copy.toFloat());
+}
+
+bool	Fixed::operator!=(const Fixed &copy) const
+{
+	return (this->toFloat() != copy.toFloat());
+}
+
+bool	Fixed::operator<=(const Fixed &copy) const
+{
+	return (this->toFloat() >= copy.toFloat());
+}
+
+bool	Fixed::operator<(const Fixed &copy) const
+{
+	return (this->toFloat() < copy.toFloat());
+}
+
+bool	Fixed::operator>(const Fixed &copy) const
+{
+	return (this->toFloat() > copy.toFloat());
 }
 
 int	Fixed::getRawBits(void) const
