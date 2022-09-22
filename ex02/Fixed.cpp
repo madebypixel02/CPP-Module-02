@@ -6,7 +6,7 @@
 /*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:27:37 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/22 13:31:46 by aperez-b         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:45:17 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,5 +186,3 @@ std::ostream	&operator<<(std::ostream &str, Fixed const &fixed_nbr)
 {
 	return (str << fixed_nbr.toFloat());
 }
-
-
