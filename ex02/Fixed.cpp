@@ -6,7 +6,7 @@
 /*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:27:37 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/19 16:16:14 by aperez-b         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:31:46 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,11 @@ bool	Fixed::operator!=(const Fixed &copy) const
 
 bool	Fixed::operator<=(const Fixed &copy) const
 {
+	return (this->toFloat() <= copy.toFloat());
+}
+
+bool	Fixed::operator>=(const Fixed &copy) const
+{
 	return (this->toFloat() >= copy.toFloat());
 }
 
@@ -115,6 +120,56 @@ bool	Fixed::operator<(const Fixed &copy) const
 bool	Fixed::operator>(const Fixed &copy) const
 {
 	return (this->toFloat() > copy.toFloat());
+}
+
+Fixed	&Fixed::operator++(void)
+{
+	this->setRawBits(this->getRawBits() + 1);
+	return (*this);
+}
+
+Fixed	&Fixed::operator--(void)
+{
+	this->setRawBits(this->getRawBits() - 1);
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int value)
+{
+	Fixed	aux;
+
+	aux = *this;
+
+	if (!value)
+		value = 1;
+	this->setRawBits(this->getRawBits() + value);
+	return (aux);
+}
+
+Fixed	Fixed::operator--(int value)
+{
+	Fixed	aux;
+
+	aux = *this;
+
+	if (!value)
+		value = 1;
+	this->setRawBits(this->getRawBits() - value);
+	return (aux);
+}
+
+const Fixed	&Fixed::min(Fixed const &copy1, Fixed const &copy2)
+{
+	if (copy1 < copy2)
+		return (copy1);
+	return (copy2);
+}
+
+const Fixed	&Fixed::max(Fixed const &copy1, Fixed const &copy2)
+{
+	if (copy1 > copy2)
+		return (copy1);
+	return (copy2);
 }
 
 int	Fixed::getRawBits(void) const
