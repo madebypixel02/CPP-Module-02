@@ -9,3 +9,4 @@ replace
 *.replace
 Karen
 fixed
+*.dSYM
