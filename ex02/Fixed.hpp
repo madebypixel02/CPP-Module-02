@@ -6,7 +6,7 @@
 /*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:27:05 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/22 13:28:51 by aperez-b         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:51:00 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ class	Fixed
 		bool	operator<(Fixed const &copy) const;
 		bool	operator>(Fixed const &copy) const;
 		
+		/* Other Operators */
 		Fixed	&operator++(void);
 		Fixed	&operator--(void);
 		Fixed	operator++(int value);
