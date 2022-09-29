@@ -6,7 +6,7 @@
 /*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 12:27:37 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/19 16:06:00 by aperez-b         ###   ########.fr       */
+/*   Updated: 2022/09/29 15:25:53 by aperez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	Fixed::toInt(void) const
 
 Fixed	&Fixed::operator=(Fixed const &copy)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Assignment operator called" << std::endl;
 	this->_value = copy.getRawBits();
 	return (*this);
 }
